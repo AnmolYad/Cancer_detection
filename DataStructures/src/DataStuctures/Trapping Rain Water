@@ -1,0 +1,31 @@
+class Solution {
+    public int trap(int[] a) {
+        int n=a.length;
+        int maxleft=a[0];
+        int maxright=a[n-1];
+        int left=1;
+        int right=n-2;
+        int trapwater=0;
+        while(left<=right){
+            if(maxleft>maxright){
+                if(maxleft<a[left]){
+                    maxleft=a[left];
+                }
+                else{
+                   trapwater+=maxleft-a[left];
+                   left++;
+                }
+            }
+            else{
+                if(maxright<a[right]){
+                    maxright=a[right];
+                }
+                else{
+                    trapwater+=maxright-a[right];
+                    right--;
+                }
+            }
+        }
+        return trapwater;
+        }
+}
