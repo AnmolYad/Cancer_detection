@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+ 
+class GFG {
+ 
+  static boolean isPossible(int[] arr1, int[] arr2, int n,
+                            int K)
+  {
+    int a = Arrays.stream(arr1).max().getAsInt();
+    int b = Arrays.stream(arr2).max().getAsInt();
+ 
+    int ans = a + b;
+ 
+    // CHECKING THE CONDITION
+    return ans >= K;
+  }
+ 
+  public static void main(String[] args)
+  {
+    int[] arr1 = { 2, 1, 3 };
+    int[] arr2 = { 7, 8, 9 };
+ 
+    int k = 5;
+ 
+    int n = arr1.length;
+ 
+    if (isPossible(arr1, arr2, n, k)) {
+      System.out.println("Yes");
+    }
+    else {
+      System.out.println("No");
+    }
+  }
+}
